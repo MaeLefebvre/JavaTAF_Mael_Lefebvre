@@ -1,0 +1,111 @@
+package gsb.vue;
+
+import java.awt.Container;
+import java.awt.GridLayout;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import gsb.modele.Medicament;
+
+public class JIFMedicament extends JInternalFrame{
+	private static final long serialVersionUID = 1L;
+	protected JPanel p;  
+	protected JPanel pTexte;
+	protected JPanel pBoutons;
+	
+
+	protected JLabel JLcode;
+	protected JLabel JLLibelle;
+	protected JLabel JLDepotLegal;
+	protected JLabel JLNom;
+	protected JLabel JLComposition;
+    protected JLabel JLEffets;
+    protected JLabel JLContreIndic;
+    protected JLabel JLPrix;
+    ;
+    
+    protected JTextField JTCode;
+	protected JTextField JTLibelle;
+	protected JTextField JTDepotLegal;
+	protected JTextField JTNom;
+	protected JTextField JTComposition;
+    protected JTextField JTContreIndic;
+    protected JTextField JTEffets;
+    protected JTextField JTPrix;
+	
+    public JIFMedicament() {
+    	p = new JPanel();  // panneau principal de la fenêtre
+        pBoutons = new JPanel();    // panneau supportant les boutons
+        pTexte = new JPanel(new GridLayout(10,1));
+    	
+    	 JLcode = new JLabel("Code");
+         JLNom = new JLabel("Nom");
+         JLLibelle= new JLabel("Libelle");
+         JLDepotLegal = new JLabel("Depot Legal");
+         JLComposition = new JLabel("Composition");
+         JLEffets = new JLabel("Effets");
+         JLContreIndic = new JLabel("Contre Indice");
+         JLPrix = new JLabel("prix");
+         
+         JTCode = new JTextField(20);
+         JTCode.setMaximumSize(JTCode.getPreferredSize());
+         JTNom = new JTextField();
+         JTLibelle = new JTextField();
+         JTDepotLegal = new JTextField();    
+         JTComposition = new JTextField();
+         JTEffets = new JTextField();
+         JTContreIndic = new JTextField();
+         JTPrix = new JTextField();
+         
+         pTexte.add(JLcode);
+         pTexte.add(JTCode);
+         pTexte.add(JLNom);
+         pTexte.add(JTNom);
+         pTexte.add(JLLibelle);
+         pTexte.add(JTLibelle);
+         pTexte.add(JLDepotLegal);
+         pTexte.add(JTDepotLegal);
+         pTexte.add(JLComposition);
+         pTexte.add(JTComposition);
+         pTexte.add(JLEffets);
+         pTexte.add(JTEffets);
+         pTexte.add(JLContreIndic);
+         pTexte.add(JTPrix);
+         pTexte.add(JLPrix);
+		
+        // mise en forme de la fenêtre
+
+         p.add(pTexte);
+         p.add(pBoutons);
+         Container contentPane = getContentPane();
+         contentPane.add(p);
+
+	}
+    
+    public void remplirText(Medicament unMedicament) 	
+    {  // méthode qui permet de remplir les zones de texte à partir des valeurs passées en paramètres
+        JTCode.setText(unMedicament.getCode());        
+        JTNom.setText(unMedicament.getNom());
+        JTLibelle.setText(unMedicament.getLibelle());
+        JTDepotLegal.setText(unMedicament.getDepotLegal());    
+        JTComposition.setText(unMedicament.getComposition());
+        JTEffets.setText(unMedicament.getEffets());
+        JTContreIndic.setText(unMedicament.getContreIndic());
+        JTPrix.setText(Float.toString(unMedicament.getPrix()));
+     }
+     
+      public void viderText() 	
+    {  // méthode qui permet de vider les zones de texte 
+        JTCode.setText("");        
+        JTNom.setText("");
+        JTLibelle.setText("");
+        JTDepotLegal.setText("");    
+        JTComposition.setText("");
+        JTEffets.setText("");
+        JTContreIndic.setText("");
+        JTPrix.setText("");
+     }
+}

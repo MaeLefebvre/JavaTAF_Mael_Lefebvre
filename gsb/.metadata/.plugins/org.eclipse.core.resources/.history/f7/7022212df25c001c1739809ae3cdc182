@@ -1,0 +1,113 @@
+package gsb.vue;
+
+import java.awt.Container;
+import java.awt.GridLayout;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import gsb.modele.Medecin;
+
+public class JIFMedicament extends JInternalFrame{
+	private static final long serialVersionUID = 1L;
+	protected JPanel p;  
+	protected JPanel pTexte;
+	protected JPanel pBoutons;
+	
+
+	protected JLabel JLcode;
+	protected JLabel JLLibelle;
+	protected JLabel JLDepotLegal;
+	protected JLabel JLNom;
+	protected JLabel JLComposition;
+    protected JLabel JLEffets;
+    protected JLabel JLContreIndic;
+    protected JLabel JLPrix;
+    ;
+    
+    protected JTextField JTCode;
+	protected JTextField JTLibelle;
+	protected JTextField JTDepotLegal;
+	protected JTextField JTNom;
+	protected JTextField JTComposition;
+    protected JTextField JTContreIndic;
+    protected JTextField JTEffets;
+    protected JTextField JTPrix;
+	
+    public JIFMedecin() {
+    	p = new JPanel();  // panneau principal de la fenêtre
+        pBoutons = new JPanel();    // panneau supportant les boutons
+        pTexte = new JPanel(new GridLayout(9,2));
+    	
+    	 JLcode = new JLabel("Code");
+         JLNom = new JLabel("Nom");
+         JLLibelle= new JLabel("Libelle");
+         JLDepotLegal = new JLabel("Depot Legal");
+         JLComposition = new JLabel("Composition");
+         JLEffets = new JLabel("Effets");
+         JLContreIndic = new JLabel("Contre Indice");
+         JLPrix = new JLabel("prix");
+         
+         JTCode = new JTextField(20);
+         JTCode.setMaximumSize(JTCode.getPreferredSize());
+         JTNom = new JTextField();
+         JTLibelle = new JTextField();
+         JTDepotLegal = new JTextField();    
+         JTComposition = new JTextField();
+         JTEffets = new JTextField();
+         JTContreIndic = new JTextField();
+         JTPrix = new JTextField();
+         
+         pTexte.add(JLcode);
+         pTexte.add(JTCode);
+         pTexte.add(JLNom);
+         pTexte.add(JTNom);
+         pTexte.add(JLLibelle);
+         pTexte.add(JTLibelle);
+         pTexte.add(JLDepotLegal);
+         pTexte.add(JTDepotLegal);
+         pTexte.add(JLComposition);
+         pTexte.add(JTComposition);
+         pTexte.add(JLEffets);
+         pTexte.add(JTEffets);
+         pTexte.add(JLContreIndic);
+         pTexte.add(JTPrix);
+         pTexte.add(JLPrix);
+		
+        // mise en forme de la fenêtre
+
+         p.add(pTexte);
+         p.add(pBoutons);
+         Container contentPane = getContentPane();
+         contentPane.add(p);
+
+	}
+    
+    public void remplirText(Medecin unMedecin) 	
+    {  // méthode qui permet de remplir les zones de texte à partir des valeurs passées en paramètres
+        JTcode.setText(unMedecin.getCodeMed());        
+        JTnom.setText(unMedecin.getNom());
+        JTprenom.setText(unMedecin.getPrenom());
+        JTadresse.setText(unMedecin.getAdresse());    
+        JTcp.setText(unMedecin.getLaLocalite().getCodePostal());
+        JTville.setText(unMedecin.getLaLocalite().getVille());
+        JTtelephone.setText(unMedecin.getTelephone());
+        JTpotentiel.setText(unMedecin.getPotentiel());
+        JTspecialite.setText(unMedecin.getSpecialite());
+     }
+     
+      public void viderText() 	
+    {  // méthode qui permet de vider les zones de texte 
+        JTcode.setText("");        
+        JTnom.setText("");
+        JTprenom.setText("");
+        JTadresse.setText("");    
+        JTcp.setText("");
+        JTville.setText("");
+        JTtelephone.setText("");
+        JTpotentiel.setText("");
+        JTspecialite.setText("");
+     }
+}

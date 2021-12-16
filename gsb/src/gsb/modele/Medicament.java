@@ -3,13 +3,13 @@ package gsb.modele;
 public class Medicament {
 	protected String code;
 	protected String libelle;
-	protected String depotLegal ;
+	protected String depotLegal;
 	protected String nom;
 	protected String composition;
 	protected String effets;
 	protected String contreIndic;
 	protected float prix;
-	
+
 	/**
 	 * @param code
 	 * @param libelle
@@ -20,9 +20,8 @@ public class Medicament {
 	 * @param contreIndic
 	 * @param prix
 	 */
-	public Medicament(String code, String libelle, String depotLegal,
-			String nom, String composition, String effets,
-			String contreIndic, Float prix) {
+	public Medicament(String depotLegal, String nom, String composition, String effets, String contreIndic, Float prix,
+			String code, String libelle) {
 		this.code = code;
 		this.libelle = libelle;
 		this.nom = nom;
@@ -97,8 +96,4 @@ public class Medicament {
 		this.prix = prix;
 	}
 
-	
-	
-
 }
-
