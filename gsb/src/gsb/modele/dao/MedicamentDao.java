@@ -20,7 +20,7 @@ public class MedicamentDao {
 			}
 			;
 		} catch (Exception e) {
-			System.out.println("erreur reqSelection.next() pour la requête - select * from Medicament where CODEMED ='"
+			System.out.println("erreur reqSelection.next() pour la requête - select * from Medicament where MED_DEPOTLEGAL ='"
 					+ codeMedicament + "'");
 			e.printStackTrace();
 		}

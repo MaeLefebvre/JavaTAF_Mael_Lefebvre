@@ -13,6 +13,8 @@ import gsb.vue.MenuPrincipal;
  *         de type généré, allez à : Fenêtre - Préférences - Java - Style de
  *         code - Modèles de code
  */
+
+//cette classe est la classe lancé par l'application par defaut pour tester le menu principal
 public class Application {
 
 	public static void main(String[] args) {
